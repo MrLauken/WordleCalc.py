@@ -1,6 +1,11 @@
-from logging.handlers import TimedRotatingFileHandler
+import sys
 import enchant 
 import random
+import time
+
+def DO_something():
+    return None
+
 emptystring= ""
 d = enchant.Dict("en_US")
 Liste = ["A","B","C","D","E","F","G","H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U","v","W", "X", "Y", "Z"]
@@ -15,8 +20,10 @@ for x in range(1,6):
     elif yes_NO== "n" or yes_NO=="N":
         ordliste.append(None)
     else:
-        print("\n Invalid input")
-        x=x-1
+        for x in range(0,16):
+            print("\n ERROR: Invalid input, script will autoterminate in 15 seconds")
+            time.sleep(1)
+        sys.exit()
 
 yes_NO=str(input("Are there any letters of unknown placement? (y/n): ")).upper()
 
@@ -24,8 +31,11 @@ if yes_NO=="Y":
     ekstrabok = str(input("Please write letter/letters: (E.G POERTY) ").upper())
     for x in ekstrabok:
         ekstraliste.append(x)
-
-
+else:
+        for x in range(0,16):
+            print("\n ERROR: Invalid input, script will autoterminate in 15 seconds")
+            time.sleep(1)
+        sys.exit()
 
 
 excluded_letters = input("\n Write all excluded letters if there are any: (E.G ADEFIQTOP) ")
@@ -46,7 +56,7 @@ for x in ordliste:
     ordliste1.append(x)
 
 
-while p<=100 and z<=100000:
+while p<=100 and z<=150000:
     aight=1
     if len(ekstraliste)>>0:
         for x in ekstraliste:
@@ -90,5 +100,11 @@ while p<=100 and z<=100000:
     z+=1
 
 if p>=100:
-    print("Program ended early due to too many possible words")           
+    print("Program ended early due to too many possible words")         
+else:
+    print("The great search for words terminated correctly due to runtime. This limitation might have caused certain words to escape, although this is fairly unlikely ")
+
+print("Script will autoterminate in 60 seconds")
+time.sleep(60)
+
     
