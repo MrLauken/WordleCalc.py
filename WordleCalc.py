@@ -67,15 +67,20 @@ for x in ordliste:
 while p<=100 and z<=150000:
     aight=1
     ekstraliste1=[]
-    s=0
+    Nonne=0
+    Sweats=0
     for x in ekstraliste:
         ekstraliste1.append(x)
-        if x != None:
-            s+=1
+        if x== None:
+            Nonne+=1
+        else:
+            Sweats+=1
     for x in ordliste:
         if x== None:
             if ekstraliste[q]!=None and ekstraliste1[q]!="":
-                sjanse = random.randint(0,len(ekstraliste1[q])+1)
+                sjanse = random.randint(0,int(len(ekstraliste1[q])+2)
+                
+                )
                 #print(int(teller+l), sjanse,ekstraliste1, ekstraliste1[q], "print 1")
                 if sjanse>=1 or teller+l>=5: 
                     p = 0
