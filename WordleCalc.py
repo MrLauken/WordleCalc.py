@@ -3,8 +3,8 @@ import enchant
 import random
 import time
 
-def DO_something():
-    return None
+#def DO_something():
+#    return None
 
 emptystring= ""
 d = enchant.Dict("en_US")
@@ -78,18 +78,12 @@ while p<=100 and z<=150000:
     for x in ordliste:
         if x== None:
             if ekstraliste[q]!=None and ekstraliste1[q]!="":
-                sjanse = random.randint(0,int(len(ekstraliste1[q])+2)
-                
-                )
-                #print(int(teller+l), sjanse,ekstraliste1, ekstraliste1[q], "print 1")
+                sjanse = random.randint(0,int(len(ekstraliste1[q])+2))
                 if sjanse>=1 or teller+l>=5: 
                     p = 0
                     sjanse = random.randint(0,int(len(ekstraliste1[q]))-1)   
                     for x in ekstraliste1[q]:
-                        
-                        #print(sjanse, p, x)
                         if sjanse == p:
-                            #print(x, "Print 2")
                             ordliste1[q] = x
                             tall = 0
                             streng = ""
@@ -108,15 +102,12 @@ while p<=100 and z<=150000:
                 else: 
                     ordliste1[q] = Liste[random.randint(0,len(Liste)-1)]
                     l+=1
-                    #print(ordliste1[q], "print 3")
             else: 
                 ordliste1[q] = Liste[random.randint(0,len(Liste)-1)]
                 l+=1
-                #print(ordliste1[q], "print 4")
                 
         q+=1
     q=0
-    #print(ordliste1, "print 5")
     strin = "".join(ordliste1)    
     l=0
 
